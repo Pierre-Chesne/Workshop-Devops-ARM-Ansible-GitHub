@@ -22,14 +22,7 @@ jobs:
         AZURE_SERVICE_APP_ID: ${{ secrets.AZURE_SERVICE_APP_ID }}
         AZURE_SERVICE_PASSWORD: ${{ secrets.AZURE_SERVICE_PASSWORD }}
         AZURE_SERVICE_TENANT: ${{ secrets.AZURE_SERVICE_TENANT }}
-
-    - name: Azure - Deploy ARM Template RG
-      uses: Azure/github-actions/arm@master
-      env:
-        AZURE_RESOURCE_GROUP: RG-Workshop-Devops-ARM-Ansible-GitHub
-        AZURE_TEMPLATE_LOCATION: ./ARM/azuredeployRG.json
-        AZURE_TEMPLATE_PARAM_LOCATION: ./ARM/azuredeployRG.parameters.json
-
+        
     - name: Azure - Deploy ARM Template VM
       uses: Azure/github-actions/arm@master
       env:
