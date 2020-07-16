@@ -1,41 +1,34 @@
-name: Workflow deploiement d'une VM dans un "resource group"
+name: Workflow deploiement Ansible
 on:
   push:
     branches:
     - master
     path:
-    - ARM/*
+    - Ansible/*
 
 jobs:
+
   build-and-deploy:
     name: Deploy to Azure
     runs-on: ubuntu-latest
     steps:
 
-    - name: Git - Get Sources
-      uses: actions/checkout@master
-
-    - name: Azure - Login ARM
-      uses: Azure/github-actions/login@master
-      env:
-        AZURE_SUBSCRIPTION: Peter_Azure
-        AZURE_SERVICE_APP_ID: ${{ secrets.AZURE_SERVICE_APP_ID }}
-        AZURE_SERVICE_PASSWORD: ${{ secrets.AZURE_SERVICE_PASSWORD }}
-        AZURE_SERVICE_TENANT: ${{ secrets.AZURE_SERVICE_TENANT }}
-
-    - name: Azure - Deploy ARM Template VM
-      uses: Azure/github-actions/arm@master
-      env:
-        AZURE_RESOURCE_GROUP: RG-Workshop-Devops-ARM-Ansible-GitHub
-        AZURE_TEMPLATE_LOCATION: ./ARM/azuredeploy.json
-        AZURE_TEMPLATE_PARAM_LOCATION: ./ARM/azuredeploy.parameters.json
-
-    - name: Run playbook
-      uses: dawidd6/action-ansible-playbook@v2
+    - name: Run Ansible playbook
+      uses: dawidd6/action-ansible-playbook@v2.1.1
       with:
-        playbook: web.yml
-        directory: ./main.yml
-        key: ${{secrets.SSH_PRIVATE_KEY}}
+    # Ansible playbook filepath
+        playbook: ./Ansible/main.yml
+    # Root directory of Ansible project (defaults to current)
+        directory: ./
+    # SSH private key used to connect to the host
+        key: {{secrets.SSH_PRIVATE_KEY}}
+    # Custom content to write into hosts
         inventory: |
           [all]
           workshopdevopspierrc.eastus2.cloudapp.azure.com
+
+
+
+        
+
+
