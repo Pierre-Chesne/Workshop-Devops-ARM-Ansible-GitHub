@@ -21,7 +21,7 @@ jobs:
     # Root directory of Ansible project (defaults to current)
         directory: ./
     # SSH private key used to connect to the host
-        key: {{secrets.SSH_PRIVATE_KEY}}
+        key: ${{secrets.SSH_PRIVATE_KEY}}
     # Custom content to write into hosts
         inventory: |
           [all]
