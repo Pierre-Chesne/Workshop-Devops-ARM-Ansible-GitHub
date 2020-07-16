@@ -1,4 +1,4 @@
-name: Workflow deploiement d'une VM avec un site Web
+name: Workflow deploiement d'une VM dans un "resource group"
 on:
   push:
     branches:
