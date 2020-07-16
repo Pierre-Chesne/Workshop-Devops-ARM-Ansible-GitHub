@@ -17,7 +17,7 @@ jobs:
       uses: dawidd6/action-ansible-playbook@v2.1.1
       with:
     # Ansible playbook filepath
-        playbook: ./Ansible/main.yml
+        playbook: main.yml
     # Root directory of Ansible project (defaults to current)
         directory: ./
     # SSH private key used to connect to the host
