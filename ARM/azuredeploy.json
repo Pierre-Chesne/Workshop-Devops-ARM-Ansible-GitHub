@@ -104,11 +104,16 @@
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",
       "properties": {
-        "publicIPAllocationMethod": "Dynamic"
+        "publicIPAllocationMethod": "Dynamic",
+        "dnsSettings": {
+          "domainNameLabel": "workshopdevopspierrc"
+        }
+        
       },
       "sku": {
         "name": "Basic"
       }
+      
     },
     {
       "type": "Microsoft.Network/virtualNetworks",
