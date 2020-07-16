@@ -1,0 +1,32 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "value": "VM-Web"
+        },
+        "adminUsername": {
+            "value": "pierrc"
+        },
+        "sshKeyData": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/95014b70-0907-44b9-a33f-229e4842ae85/resourceGroups/RG-KeyVault/providers/Microsoft.KeyVault/vaults/KeyVaultPierrc"
+                },
+                "secretName": "PublicKey"
+            }
+        },
+        "vNetName": {
+            "value": "Vnet-Workshop"
+        },
+        "vNetAddressPrefixes": {
+            "value": "10.0.0.0/16"
+        },
+        "vNetSubnetName": {
+            "value": "Subnet-Workshop"
+        },
+        "vNetSubnetAddressPrefix": {
+            "value": "10.0.0.0/24"
+        }
+    }
+}

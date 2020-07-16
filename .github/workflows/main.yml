@@ -1,0 +1,42 @@
+name: Workflow deploiement d'une VM avec un site Web
+on:
+  push:
+    branches:
+    - master
+    path:
+    - ARM/*
+
+jobs:
+  build-and-deploy:
+    name: Deploy to Azure
+    runs-on: ubuntu-latest
+    steps:    
+    - name: Azure Login Az Cli
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az group create --name RG-Workshop-Devops-ARM-Ansible-GitHub --location eastus2
+
+    - name: Git - Get Sources
+      uses: actions/checkout@master
+
+    - name: Azure - Login ARM
+      uses: Azure/github-actions/login@master
+      env:
+        AZURE_SUBSCRIPTION: Peter_Azure
+        AZURE_SERVICE_APP_ID: ${{ secrets.AZURE_SERVICE_APP_ID }}
+        AZURE_SERVICE_PASSWORD: ${{ secrets.AZURE_SERVICE_PASSWORD }}
+        AZURE_SERVICE_TENANT: ${{ secrets.AZURE_SERVICE_TENANT }}
+
+    - name: Azure - Deploy ARM Template
+      uses: Azure/github-actions/arm@master
+      env:
+        AZURE_RESOURCE_GROUP: RG-Workshop-Devops-ARM-Ansible-GitHub
+        AZURE_TEMPLATE_LOCATION: ./ARM/azuredeploy.json
+        AZURE_TEMPLATE_PARAM_LOCATION: ./ARM/azuredeploy.parameters.json
