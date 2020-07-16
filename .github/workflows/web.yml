@@ -22,4 +22,5 @@ jobs:
         inventory: |
         [all]
         20.49.40.32
+        
 
