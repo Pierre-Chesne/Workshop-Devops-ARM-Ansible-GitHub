@@ -9,16 +9,9 @@ on:
 jobs:
   build-and-deploy:
     name: Deploiement dans Azure
-    runs-on: ubuntu-latest    
-    steps:
+    runs-on: ubuntu-latest
+    steps:    
     - name: Azure Login Az Cli
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    - name: Azure CLI script Creation d'un "RG"
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.9.0
-        inlineScript: |
-          az group create --name testaction --location eastus2
