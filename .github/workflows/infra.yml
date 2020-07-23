@@ -1,4 +1,4 @@
-name: Workflow deploiement d'une VM
+name: Workflow deploiement RG et VM
 on:
   push:
     branches:
@@ -33,3 +33,10 @@ jobs:
 
     - name: Git - Get Sources
       uses: actions/checkout@master
+
+    - name: Azure - Deploy ARM Template VM
+      uses: Azure/github-actions/arm@master
+      env:
+        AZURE_RESOURCE_GROUP: RG-Workshop-Devops-ARM-Ansible-GitHub
+        AZURE_TEMPLATE_LOCATION: ./ARM/azuredeploy.json
+        AZURE_TEMPLATE_PARAM_LOCATION: ./ARM/azuredeploy.parameters.json
