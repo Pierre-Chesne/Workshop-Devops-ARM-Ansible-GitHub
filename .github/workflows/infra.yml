@@ -1,4 +1,4 @@
-name: Workflow deploiement d'une VM dans un "resource group"
+name: Workflow deploiement d'une VM
 on:
   push:
     branches:
@@ -15,10 +15,10 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+    
     - name: Azure CLI script Creation d'un "RG"
       uses: azure/CLI@v1
       with:
         azcliversion: 2.9.0
         inlineScript: |
-          az group create --name RG-teststan --location eastus2
+          az group create --name RG-Workshop-Devops-ARM-Ansible-GitHub --location eastus2
