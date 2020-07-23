@@ -21,4 +21,4 @@ jobs:
       with:
         azcliversion: 2.9.0
         inlineScript: |
-          az group create --name RG-Workshop-Devops-ARM-Ansible-GitHub --location eastus2
+          az group create --name RG-teststan --location eastus2
