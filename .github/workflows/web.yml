@@ -18,7 +18,8 @@ jobs:
       uses: dawidd6/action-ansible-playbook@v2
       with:
         playbook: main.yml
-        directory: ./Ansible        
+        directory: ./Ansible
+        key: toto
         inventory: |
           [all]
           20.36.191.190
