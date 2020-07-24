@@ -13,13 +13,3 @@ jobs:
     steps:
     - name: Git - Get Sources
       uses: actions/checkout@master
-
-    - name: Run playbook
-      uses: dawidd6/action-ansible-playbook@v2
-      with:
-        playbook: main.yml
-        directory: ./Ansible
-        key: {{ secrets.SSH_PRIVATE_KEY }}
-        inventory: |
-          [all]
-          workshopdevopspierrc.eastus2.cloudapp.azure.com              
