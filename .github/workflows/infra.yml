@@ -4,7 +4,7 @@ on:
     branches:
     - master
     path:
-    - ARM/*
+    - 'ARM/*'
 
 jobs:
   build-and-deploy:

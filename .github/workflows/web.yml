@@ -4,7 +4,7 @@ on:
     branches:
     - master
     path:
-    - Web/*
+    - 'Web/*'
 
 jobs:
   build-and-deploy:
