@@ -23,6 +23,3 @@ jobs:
         inventory: |
           [all]
           20.36.191.190
-          
-
-
