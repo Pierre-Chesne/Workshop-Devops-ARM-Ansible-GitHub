@@ -15,8 +15,13 @@ jobs:
       uses: actions/checkout@master
 
     - name: Run playbook
-      uses: jawher/action-ansible@2.9.7
-      env:
-        ANSIBLE_SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      uses: dawidd6/action-ansible-playbook@v2
       with:
-        args: ansible-playbook -i Ansible/hosts.yml Ansible/main.yml
+        playbook: ./Ansible/main.yml
+        directory: ./Ansible
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        inventory: |
+          [all]
+          20.36.191.190
+
+
