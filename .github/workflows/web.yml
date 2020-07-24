@@ -18,34 +18,7 @@ jobs:
       uses: dawidd6/action-ansible-playbook@v2
       with:
         playbook: main.yml
-        directory: ./Ansible
-        key: -----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEAyI9jwV6X5mIqgxCZ72BT/huyuL1L5pxbE+lVS9WX2tD14Z8E
-dip8XVcibfJc6l03Vpr54L4LzE7h1RZJ4IT/M1MB7VCd1zqDGSMtIjH+VTOqBxSP
-ElVjRWwm5nnTpu3B3IVryzBHiocmVhXZFmPvOw4oZGo0gZHv8COs3z1onYbvzRWB
-WFwNI/4zKRgCCyiJK6gOkQEjfUYz9eiJ8hI53zvXXmbcnk9VR+KvG1NrOII+fiXp
-a4EyNej1825ivb1TAVzsjwM10UB6faaQ50B3TWuzZ4P05WF822IPtIxGkl0D7Xji
-kI89LtmWTmkmBLJlpV7rc973a0ea6l/Quz9cRwIDAQABAoIBAQC9K3pk7osJ83ez
-rdn0DgDLQmbdlzbbKolBi6k3YRzdeJEjIXD83+/zvncsCxkWuZuzpXOhRsAsEg8y
-hNZj3i4zw8yigZKPapIzCJnOkicZSCTMjtiv6zg6R9udMjWvUryy+mmE+mHQSM+h
-DPR5CQOhySXSKNaji/oroAqzeeGOCgeRpRmyQDE/ojUfhaonEF03QsmryFyGb4zp
-y2IbaGZbifzUvaHMpu5JE5uk2FyM/ku5VTSPLQfJTNmQgc0RR64HWjer5GUrHSyQ
-qDNoUwXiCrfLg5DcXFLe3pg2cLOC8cEDvwmSNUS0v8ri/GC8dWO+tGRxFTKfGUVM
-uvLLor8pAoGBAOzOyxghbtkaLOeIWmX98N2d+YjZYXZVwFCuXXImr9EOxeqvJ+Ua
-9QVI03xY0AlyhD11rtkYf5n/f8OAkHSza9R0dn5+XG5yFnEWWhntUKAXmBhbwozl
-3O8BrjRFuLmzTu+33k7dugO3DfW7qFukf52hzHWtTGDfjZzsFO6tRRPNAoGBANjQ
-isd5q2+ZvLwDjypNG9KAKPq3q03bkuC+Vn5aSxtXcZQlm+426YFkAZUh7CptKPfN
-rrhoxExLnLmMMbMSGu4k5oiLbUVt7DYU3pOsiWLO1gVQIepnChJQ6zgK4v9z3c+r
-5OSTIqgJ8WgQnfqqQRF5OWpaDIpxhTATPRcLn4RjAoGASBYTQP88bR5IuRqK2i1Z
-Wz0xrvTtdEZaSrUpgQxBzRQAL5auQFHacIdgyaOHgLi5hLQES9XnUguy6uKCFuRf
-WMczIwJ4RK66Iia5utbBClrkU9Xq/VUj0iXiz8rBltX8m4CPTda1P1hECZ/cejkz
-F9sfEFt2uq6Sv0gmfxmDw6kCgYEAhidrZ4fyOuiObmtpX0w85d/k+1VASrmNRUCg
-tifahz1xCrDGrfwOOcCOdh96SLooekQrUvGIXIkAnZKQgfO29BmjB2P2JdqhKMl6
-+zbr/1Zp+PmfMrG0+qZVFOUvlc60tbXvuDsOW5ljZPe7OIm2H0C59QNo9RTOy3Nr
-/mFzv28CgYEA3EZVC8oT+Xypyn/f/C/OP5Jjd0/+xWJ1JeHsjbyvM+kGbhbQfqLG
-iBDvuOKyH3HOu9DMt+L8KxgwenC/OzKtu8+Vj1zR17KjQTKeSocxd93/aeSqe6US
-D+4pjl6oIk/VbXMqkQG7r44OjjrY6PHBdMiDhR83WV2q5KQQlvEV7k0=
------END RSA PRIVATE KEY-----
+        directory: ./Ansible       
         inventory: |
           [all]
           20.36.191.190
