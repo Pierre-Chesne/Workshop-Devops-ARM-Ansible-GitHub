@@ -13,6 +13,11 @@ jobs:
     steps:
     - name: Git - Get Sources
       uses: actions/checkout@master
+      
+    - name: Azure Login Az Cli
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Run playbook
       uses: dawidd6/action-ansible-playbook@v2
@@ -20,6 +25,3 @@ jobs:
         playbook: main.yml
         directory: ./Ansible
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        inventory: |
-          [all]
-          20.36.191.190
