@@ -24,4 +24,7 @@ jobs:
         playbook: main.yml
         directory: ./Ansible
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        inventory: |
+          [all]
+          52.251.91.117
                
