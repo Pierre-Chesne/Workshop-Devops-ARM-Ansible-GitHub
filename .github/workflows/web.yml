@@ -26,5 +26,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       options: |
-        -i hosts.yml
+        --inventory hosts.yml
                
