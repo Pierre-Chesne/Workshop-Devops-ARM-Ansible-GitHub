@@ -1,10 +1,9 @@
 name: Workflow deploiement RG et VM
-#on:
-#  push:
-#    branches:
-#    - master
-#    path:
-#    - './ARM/*'
+on:
+  push:
+    branches: [ master ]
+    path:
+    - "./ARM/**"
 
 jobs:
   build-and-deploy:

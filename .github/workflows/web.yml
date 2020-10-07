@@ -1,10 +1,9 @@
 name: Workflow deploiement du site web
 on:
   push:
-    branches:
-    - master
+    branches: [ master ]    
     path:
-    - './Web/*'
+    - "./Web/*"
 
 jobs:
   build-and-deploy:
